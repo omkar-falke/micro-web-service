@@ -1,0 +1,47 @@
+package com.cjc.main.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cjc.main.model.User;
+import com.cjc.main.service.NotificationService;
+
+@RestController
+public class MailController {
+	private static final Logger log = LoggerFactory.getLogger(MailController.class);
+
+	@Autowired
+	private NotificationService notificationService;
+	
+	@RequestMapping("/")
+	public String singup()
+	{
+		return "Register Here";
+	}
+	
+	@RequestMapping("/login")
+	public String mailCheck()
+	{
+		User user=new User();
+		user.setId(101);
+		user.setUsername("Omkar");
+		user.setPassword("Omkar");
+		user.setEmail("omfalke555@gmail.com");
+		try {
+			notificationService.sendNotification(user);
+		} catch (MailException e) {
+			
+			log.info("Error message......."+e.getMessage());
+		}
+		
+		return "Thanks  For Your Registration.";
+	}
+	
+
+	
+	
+}

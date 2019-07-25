@@ -1,0 +1,37 @@
+package com.cjc.main.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.cjc.main.model.Employee;
+import com.cjc.main.service.EmployeeService;
+
+@Controller
+public class HomeController {
+
+	@Autowired
+	EmployeeService es;
+
+	@GetMapping("/")
+	public String getData(Model model) {
+		List<Employee> list = es.getData();
+		model.addAttribute("emp", list);
+		return "view/employees";
+	}
+	
+	
+	@GetMapping("/createExcel")
+	public String download(HttpServletRequest request,HttpServletResponse response) {
+		List<Employee> list = es.getData();
+		boolean flag=es.createPdf(list,context)
+		return null;
+	}
+
+}

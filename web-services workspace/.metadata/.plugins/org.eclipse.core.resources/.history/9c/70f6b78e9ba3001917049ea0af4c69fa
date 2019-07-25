@@ -1,0 +1,25 @@
+package com.cjc.main.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.cjc.main.model.Employee;
+import com.cjc.main.repository.EmployeeRepo;
+import com.cjc.main.service.EmployeeService;
+
+@Service
+@Transactional
+public class EmployeeImpl  implements EmployeeService{
+
+	@Autowired 
+	EmployeeRepo er;
+	@Override
+	public List<Employee> getData() {
+		List<Employee>list=(List<Employee>) er.findAll();
+		return list;
+	}
+
+}

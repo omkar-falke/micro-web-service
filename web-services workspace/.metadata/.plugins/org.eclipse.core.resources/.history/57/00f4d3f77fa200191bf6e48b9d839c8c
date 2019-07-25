@@ -1,0 +1,19 @@
+package com.cjc.main.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cjc.main.model.Employee;
+import com.cjc.main.service.EmployeeService;
+
+@Service
+public class EmployeeImpl  implements EmployeeService{
+
+	@Override
+	public List<Employee> getData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

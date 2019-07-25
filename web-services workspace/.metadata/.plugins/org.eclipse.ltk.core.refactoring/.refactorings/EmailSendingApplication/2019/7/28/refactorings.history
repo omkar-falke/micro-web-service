@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;NotificationService.java&apos; to &apos;RegistrationWebApplication/src/main/java/com.cjc.main.serviceimpl&apos;&#x0D;&#x0A;- Original project: &apos;EmailSendingApplication&apos;&#x0D;&#x0A;- Destination element: &apos;RegistrationWebApplication/src/main/java/com.cjc.main.serviceimpl&apos;&#x0D;&#x0A;- Original element: &apos;com.cjc.main.service.NotificationService.java&apos;" description="Copy compilation unit" destination="=RegistrationWebApplication/src\/main\/java&lt;com.cjc.main.serviceimpl" element1="/src\/main\/java&lt;com.cjc.main.service{NotificationService.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1562692223056" units="1" version="1.0"/>
+</session>

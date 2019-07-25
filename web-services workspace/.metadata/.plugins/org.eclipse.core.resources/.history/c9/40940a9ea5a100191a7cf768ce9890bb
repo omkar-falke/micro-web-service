@@ -1,0 +1,8 @@
+server.port=8081
+spring.application.name=zuul
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+#zuul.routes.getclient.url=http://desktop-da8vt77:8082
+zuul.routes.getclient.service-id=registration-app
+zuul.routes.getclient.service-id=view-app
+zuul.routes.getclient.service-id=update-app
+zuul.routes.getclient.service-id=delete-app

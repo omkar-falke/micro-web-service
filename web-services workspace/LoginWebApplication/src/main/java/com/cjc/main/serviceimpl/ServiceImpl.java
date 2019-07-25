@@ -1,0 +1,23 @@
+package com.cjc.main.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cjc.main.model.Employee;
+import com.cjc.main.repository.CrudRepository;
+import com.cjc.main.service.ServiceI;
+
+@Service
+public class ServiceImpl implements ServiceI
+{
+	@Autowired
+	CrudRepository cr;
+
+	@Override
+	public List<Employee> checkLogin(String username, String password) {
+		List<Employee>list=cr.findByUsernameAndPassword(username, password);
+		return list;
+	}
+}
